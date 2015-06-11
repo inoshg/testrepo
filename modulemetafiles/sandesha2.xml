@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><module name="sandesha2">
+    <version id="4.2.0" globallyEngaged="false" successfullyAdded="true">
+        <parameter name="managedModule">true</parameter>
+        <parameter name="propertiesToCopyFromReferenceMessage" locked="false">TransportURL,WSAddressingVersion,disableAddressingForOutMessages,rampartPolicy,RECV_RESULTS,PROXY</parameter>
+        <parameter name="propertiesToCopyFromReferenceRequestMessage" locked="false">WSAddressingVersion,RECV_RESULTS,rampartPolicy</parameter>
+        <policies>
+            <policy policyType="1" version="4.2.0">
+                <policyUUID>RMPolicy</policyUUID>
+                <wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="RMPolicy">
+                    <wsrm:RMAssertion xmlns:wsrm="http://ws.apache.org/sandesha2/policy">
+                        <wsp:Policy>
+                            <wsrm:AcknowledgementInterval>3000</wsrm:AcknowledgementInterval>
+                            <wsrm:RetransmissionInterval>6000</wsrm:RetransmissionInterval>
+                            <wsrm:MaximumRetransmissionCount>10</wsrm:MaximumRetransmissionCount>
+                            <wsrm:ExponentialBackoff>false</wsrm:ExponentialBackoff>
+                            <wsrm:InactivityTimeout>60000</wsrm:InactivityTimeout>
+                            <wsrm:SequenceRemovalTimeout>600000</wsrm:SequenceRemovalTimeout>
+                            <wsrm:InvokeInOrder>true</wsrm:InvokeInOrder>
+                            <wsrm:MessageTypesToDrop>none</wsrm:MessageTypesToDrop>
+                            <wsrm:StorageManagers>
+                                <wsrm:InMemoryStorageManager>org.apache.sandesha2.storage.inmemory.InMemoryStorageManager</wsrm:InMemoryStorageManager>
+                                <wsrm:PermanentStorageManager>org.apache.sandesha2.storage.inmemory.InMemoryStorageManager</wsrm:PermanentStorageManager>
+                            </wsrm:StorageManagers>
+                            <wsrm:SecurityManager>org.apache.sandesha2.security.dummy.DummySecurityManager</wsrm:SecurityManager>
+                            <wsrm:EPRDecorator>org.apache.sandesha2.addressing.EPRDecoratorImpl</wsrm:EPRDecorator>
+                            <wsrm:ContextManager>org.apache.sandesha2.context.DummyContextManager</wsrm:ContextManager>
+                            <wsrm:MakeConnection>
+                                <wsrm:Enabled>true</wsrm:Enabled>
+                                <wsrm:UseRMAnonURI>true</wsrm:UseRMAnonURI>
+                            </wsrm:MakeConnection>
+                            <wsrm:UseMessageSerialization>false</wsrm:UseMessageSerialization>
+                            <wsrm:EnforceRM>false</wsrm:EnforceRM>
+                        </wsp:Policy>
+                    </wsrm:RMAssertion>
+                </wsp:Policy>
+            </policy>
+        </policies>
+    </version>
+</module>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><module name="wso2throttle">
+    <version id="4.2.0" globallyEngaged="false" successfullyAdded="true">
+        <parameter name="managedModule" locked="true">true</parameter>
+        <policies>
+            <policy policyType="1" version="4.2.0">
+                <policyUUID>0942fbb4caa38b58d718d1cbe86076b051896f44ac6d7521</policyUUID>
+                <wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="0942fbb4caa38b58d718d1cbe86076b051896f44ac6d7521">
+                    <throttle:ModuleThrottleAssertion xmlns:throttle="http://www.wso2.org/products/wso2commons/throttle">
+                        <wsp:Policy>
+                            <throttle:ID throttle:type="IP">other</throttle:ID>
+                            <wsp:Policy>
+                                <throttle:Allow/>
+                            </wsp:Policy>
+                        </wsp:Policy>
+                        <wsp:Policy>
+                            <throttle:ID throttle:type="DOMAIN">other</throttle:ID>
+                            <wsp:Policy>
+                                <throttle:Allow/>
+                            </wsp:Policy>
+                        </wsp:Policy>
+                    </throttle:ModuleThrottleAssertion>
+                </wsp:Policy>
+            </policy>
+        </policies>
+    </version>
+</module>

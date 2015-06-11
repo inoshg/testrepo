@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><module name="relay">
+    <version id="4.2.0" globallyEngaged="false" successfullyAdded="true">
+        <parameter name="managedModule">true</parameter>
+        <policies>
+            <policy policyType="1" version="4.2.0">
+                <policyUUID>MessageRelayPolicy</policyUUID>
+                <wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:Id="MessageRelayPolicy">
+                    <wsmr:RelayAssertion xmlns:wsmr="http://www.wso2.org/ns/2010/01/carbon/message-relay">
+                        <wsp:Policy>
+                            <wsp:All>
+                                <wsmr:includeHiddenServices>true</wsmr:includeHiddenServices>
+                                <wsmr:services>
+                                    <wsmr:service>RegistryEventingService</wsmr:service>
+                                    <wsmr:service>PolicyEditorService</wsmr:service>
+                                    <wsmr:service>UserPrefsService</wsmr:service>
+                                    <wsmr:service>OAuth2Service</wsmr:service>
+                                </wsmr:services>
+                                <!--<wsmr:builders>-->
+                                <!--<wsmr:messageBuilder contentType="abc" class="" [formatterClass=""]/>-->
+                                <!--</wsmr:builders>-->
+                            </wsp:All>
+                        </wsp:Policy>
+                    </wsmr:RelayAssertion>
+                </wsp:Policy>
+            </policy>
+        </policies>
+    </version>
+</module>

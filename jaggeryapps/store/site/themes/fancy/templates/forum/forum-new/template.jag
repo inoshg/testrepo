@@ -1,0 +1,23 @@
+<% jagg.template("forum/forum-new", function(inputs, outputs, jagg) {%>
+<div class="title-section">
+    <h2>Create New Topic</h2>
+</div>
+
+<div class="content-section shadow-up">
+    <div class="content-data">
+        <h1></h1>
+        <form class="form-horizontal forum_form" >
+            <div class="control-group">
+                <label class="control-label" for="inputEmail"><strong>Subject</strong></label>
+                <div class="controls">
+                    <input type="text" id="subject" placeholder="Subject" class="input-block-level">
+                </div>
+            </div>
+            <div id="summernote"></div>
+            <br />
+            <a class="btn btn-primary" id="add-forum-topic">Submit</a>
+            <a class="btn" href="/store/forum">Cancel</a>
+        </form>
+    </div>
+</div>
+<% }); %>

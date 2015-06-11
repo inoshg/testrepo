@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><serviceGroup name="Provider" successfullyAdded="true">
+    <service name="Provider" exposedAllTransports="false" serviceDeployedTime="1434004831827" successfullyAdded="true">
+        <operation name="addProvider">
+            <parameter name="AuthorizationAction">/permission/admin/manage/resources/govern/provider/add</parameter>
+            <module name="addressing" version="4.2.0" type="engagedModules"/>
+            <module name="wso2bammessagetracerservice" version="4.2.1" type="engagedModules"/>
+            <module name="pagination" version="4.2.0" type="engagedModules"/>
+        </operation>
+        <operation name="getProvider">
+            <parameter name="AuthorizationAction">/permission/admin/manage/resources/govern/provider/list</parameter>
+            <module name="addressing" version="4.2.0" type="engagedModules"/>
+            <module name="wso2bammessagetracerservice" version="4.2.1" type="engagedModules"/>
+            <module name="pagination" version="4.2.0" type="engagedModules"/>
+        </operation>
+        <operation name="updateProvider">
+            <parameter name="AuthorizationAction">/permission/admin/manage/resources/govern/provider/add</parameter>
+            <module name="addressing" version="4.2.0" type="engagedModules"/>
+            <module name="wso2bammessagetracerservice" version="4.2.1" type="engagedModules"/>
+            <module name="pagination" version="4.2.0" type="engagedModules"/>
+        </operation>
+        <operation name="getProviderArtifactIDs">
+            <parameter name="AuthorizationAction">/permission/admin/manage/resources/govern/provider/list</parameter>
+            <module name="addressing" version="4.2.0" type="engagedModules"/>
+            <module name="wso2bammessagetracerservice" version="4.2.1" type="engagedModules"/>
+            <module name="pagination" version="4.2.0" type="engagedModules"/>
+        </operation>
+        <operation name="getProviderDependencies">
+            <parameter name="AuthorizationAction">/permission/admin/manage/resources/govern/provider/list</parameter>
+            <module name="addressing" version="4.2.0" type="engagedModules"/>
+            <module name="wso2bammessagetracerservice" version="4.2.1" type="engagedModules"/>
+            <module name="pagination" version="4.2.0" type="engagedModules"/>
+        </operation>
+        <operation name="deleteProvider">
+            <parameter name="AuthorizationAction">/permission/admin/manage/resources/govern/provider/add</parameter>
+            <module name="addressing" version="4.2.0" type="engagedModules"/>
+            <module name="wso2bammessagetracerservice" version="4.2.1" type="engagedModules"/>
+            <module name="pagination" version="4.2.0" type="engagedModules"/>
+        </operation>
+        <bindings>
+            <binding name="ProviderHttpBinding">
+                <operation name="addProvider"/>
+                <operation name="getProvider"/>
+                <operation name="updateProvider"/>
+                <operation name="getProviderArtifactIDs"/>
+                <operation name="getProviderDependencies"/>
+                <operation name="deleteProvider"/>
+            </binding>
+            <binding name="ProviderSoap11Binding">
+                <operation name="addProvider"/>
+                <operation name="getProvider"/>
+                <operation name="updateProvider"/>
+                <operation name="getProviderArtifactIDs"/>
+                <operation name="getProviderDependencies"/>
+                <operation name="deleteProvider"/>
+            </binding>
+            <binding name="ProviderSoap12Binding">
+                <operation name="addProvider"/>
+                <operation name="getProvider"/>
+                <operation name="updateProvider"/>
+                <operation name="getProviderArtifactIDs"/>
+                <operation name="getProviderDependencies"/>
+                <operation name="deleteProvider"/>
+            </binding>
+        </bindings>
+        <policies/>
+        <module name="addressing" version="4.2.0" type="engagedModules"/>
+        <module name="wso2bammessagetracerservice" version="4.2.1" type="engagedModules"/>
+        <module name="pagination" version="4.2.0" type="engagedModules"/>
+        <parameter name="enableMTOM">true</parameter>
+        <parameter name="adminService">true</parameter>
+        <parameter name="AuthorizationAction">/permission/admin/login</parameter>
+        <parameter name="hiddenService">true</parameter>
+        <association destinationPath="/repository/transports/https/listener" type="exposedTransports"/>
+    </service>
+</serviceGroup>

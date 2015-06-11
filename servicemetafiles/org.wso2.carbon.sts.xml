@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><serviceGroup name="org.wso2.carbon.sts" successfullyAdded="true">
+    <service name="wso2carbon-sts" serviceDocumentation="wso2carbon-sts" exposedAllTransports="false" serviceDeployedTime="1434004825865" successfullyAdded="true">
+        <operation name="IssueToken">
+            <parameter name="token-dispatcher-configuration">
+                <token-dispatcher-configuration>
+                    <!-- Issuers. You may have many issuers. -->
+                    <issuer class="org.apache.rahas.impl.SAMLTokenIssuer" default="true">
+                        <configuration type="parameter">saml-issuer-config</configuration>
+                        <tokenType>http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1</tokenType>
+                    </issuer>
+                    <issuer class="org.apache.rahas.impl.SAML2TokenIssuer" default="false">
+                        <configuration type="parameter">saml-issuer-config</configuration>
+                        <tokenType>http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0</tokenType>
+                    </issuer>
+                    <!-- Only a single canceler is allowed -->
+                    <canceler class="org.apache.rahas.impl.TokenCancelerImpl">
+                        <configuration type="parameter">token-canceler-config</configuration>
+                    </canceler>
+                    <!-- Renewers. You may have many renewers -->
+                    <renewer class="org.apache.rahas.impl.SAMLTokenRenewer" default="true">
+                        <configuration type="parameter">saml-issuer-config</configuration>
+                        <tokenType>http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1</tokenType>
+                    </renewer>
+                    <validator class="org.apache.rahas.impl.SAMLTokenValidator" default="true">
+                        <configuration type="parameter">saml-issuer-config</configuration>
+                        <tokenType>http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Status</tokenType>
+                    </validator>
+                </token-dispatcher-configuration>
+            </parameter>
+            <module name="addressing" version="4.2.0" type="engagedModules"/>
+            <module name="rampart" version="1.61-wso2v12" type="engagedModules"/>
+        </operation>
+        <bindings>
+            <binding name="wso2carbon-stsSoap12Binding">
+                <operation name="IssueToken"/>
+            </binding>
+            <binding name="wso2carbon-stsHttpBinding">
+                <operation name="IssueToken"/>
+            </binding>
+            <binding name="wso2carbon-stsSoap11Binding">
+                <operation name="IssueToken"/>
+            </binding>
+        </bindings>
+        <policies/>
+        <module name="addressing" version="4.2.0" type="engagedModules"/>
+        <module name="rampart" version="1.61-wso2v12" type="engagedModules"/>
+        <parameter name="useOrignalWSDL">true</parameter>
+        <parameter name="disableDeletion" locked="true">true</parameter>
+        <parameter name="serviceType">sts</parameter>
+        <parameter name="AuthorizationAction" locked="true">/permission/admin/configure/security</parameter>
+        <parameter name="disableTryIt" locked="true">true</parameter>
+        <association destinationPath="/repository/transports/http/listener" type="exposedTransports"/>
+        <association destinationPath="/repository/transports/https/listener" type="exposedTransports"/>
+    </service>
+</serviceGroup>
